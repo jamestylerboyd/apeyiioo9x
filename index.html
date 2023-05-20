@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eden's Playground</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/forms"></script>
+</head>
+
+<body>
+    <div id="app" class="flex flex-col min-h-screen">
+        <!-- Navbar -->
+        <header class="w-full bg-eden p-4 dark:bg-gray-900">
+            <div class="container mx-auto">
+                <nav class="flex items-center justify-between">
+                    <div class="text-white font-bold text-xl"> Eden's Playground </div>
+                    <div>
+                        <a href="#" class="text-white mx-2">Home</a>
+                        <a href="#" class="text-white mx-2">About</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!-- Main content -->
+        <main class="container mx-auto my-8 px-4 flex-grow">
+            <!-- Daily devotional generator -->
+            <section id="inputModule" class="bg-white p-8 rounded-lg shadow-md dark:bg-gray-700 mx-auto w-full md:w-2/3 lg:w-1/2">
+                <h2 class="text-2xl font-bold mb-4">Project Apple</h2>
+                <p class="font-semibold mb-4">Your daily devotional generator.</p>
+                <p class="mb-6">Generate a personalized devotional based on your preferences and daily activities.</p>
+                <form id="devotionalForm">
+                    <!-- Form content -->
+                    <div>
+                        <label for="name" class="block">Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" class="w-full border-2 rounded px-4 py-2 my-2">
+                    </div>
+                    <div>
+                        <label for="dob" class="block">Date of Birth</label>
+                        <input type="date" id="dob" class="w-full border-2 rounded px-4 py-2 my-2">
+                    </div>
+                    <div>
+                        <label for="bible" class="block">Bible Version</label>
+                        <select id="bible" class="w-full border-2 rounded px-4 py-2 my-2">
+                            <option value="KJV">King James Version (KJV)</option>
+                            <option value="NIV">New International Version (NIV)</option>
+                            <option value="NASB">New American Standard Bible (NASB)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="question1" class="block">What was the most emotionally impactful event today?</label>
+                        <input type="text" id="question1" class="w-full border-2 rounded px-4 py-2 my-2">
+                    </div>
+                    <div>
+                        <label for="question2" class="block">How would you rate your social interactions today (1-10)?</label>
+                        <input type="number" id="question2" min="1" max="10" class="w-full border-2 rounded px-4 py-2 my-2">
+                    </div>
+                    <div>
+                        <label for="question3" class="block">What is one way you would like to improve tomorrow?</label>
+                        <input type="text" id="question3" class="w-full border-2 rounded px-4 py-2 my-2">
+                    </div>
+                    <button type="button" id="generateButton" class="bg-eden text-white py-2 px-4 rounded hover:bg-eden-light">Generate Devotional</button>
+                </form>
+            </section>
+            <!-- Generated devotional -->
+            <section id="resultModule" class="hidden">
+                <div id="generatedResult" class="mt-8 bg-white p-8 rounded-lg shadow-md dark:bg-gray-700 mx-auto w-full md:w-2/3 lg:w-1/2">
+                    <!-- Generated content -->
+                    <h2 class="text-2xl font-bold mb-4">Your Daily Devotional</h2>
+                    <p id="devotionalContent" class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce maximus.</p>
+                    <button id="goBack" class="bg-eden text-white py-2 px-4 rounded hover:bg-eden-light mb-4">Generate New Devotional</button>
+                </div>
+                <div id="audioModule" class="mt-8 bg-white p-8 rounded-lg shadow-md hidden dark:bg-gray-700 mx-auto w-full md:w-2/3 lg:w-1/2">
+                    <!-- Audio controls -->
+                    <h3 class="text-xl font-bold mb-4">Listen to your devotional</h3>
+                    <p>Select a voice to have your devotional read aloud, or upload your own voice recording.</p>
+                    <div class="my-4">
+                        <label for="voice" class="block">Choose a voice:</label>
+                        <select id="voice" class="w-full border-2 rounded px-4 py-2 my-2">
+                            <option value="voice1">Notable Figure 1</option>
+                            <option value="voice2">Notable Figure 2</option>
+                            <option value="voice3">Notable Figure 3</option>
+                        </select>
+                    </div>
+                    <div class="my-4">
+                        <label for="upload" class="block">Or upload your own recording:</label>
+                        <input type="file" id="upload" class="border-2 rounded px-4 py-2 my-2">
+                    </div>
+                    <button id="playButton" class="bg-eden text-white py-2 px-4 rounded hover:bg-eden-light">Play Audio</button>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="w-full bg-eden p-4 dark:bg-gray-900">
+            <div class="container mx-auto text-center text-white">
+                <p>&copy; 2022 Eden's Playground. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
