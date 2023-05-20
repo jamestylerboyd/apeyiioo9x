@@ -4,6 +4,7 @@ document.getElementById("generateButton").addEventListener("click", async functi
     this.style.pointerEvents = "none";
     this.style.opacity = 0.5;
   
+    const openai = require("openai");
     const name = document.getElementById("name").value;
     const dob = document.getElementById("dob").value;
     const bibleVersion = document.getElementById("bible").value;
