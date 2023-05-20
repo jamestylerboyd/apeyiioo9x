@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
   const fullPrompt = `${prePrompt}; Name: ${name}; Date of Birth: ${dob}; Bible Version: ${bibleVersion}; Question 1: ${question1}; Question 2: ${question2}; Question 3: ${question3};`;
 
   try {
-    const response = await openai.Completion.create({
+    const response = await openai.completion.create({
       engine: "text-gpt-3.5-turbo",      prompt: fullPrompt,
       max_tokens: 150,
       n: 1,
