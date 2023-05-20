@@ -21,7 +21,7 @@ module.exports = async (req, res) => {
 
     res.json({ devotionalContent: response.choices[0].text.trim() });
   } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Error generating devotional" });
+      console.error(error);
+      res.status(500).json({ error: "Error generating devotional", details: error.message || error });
   }
 };
