@@ -19,6 +19,7 @@ document.getElementById("generateButton").addEventListener("click", async functi
       });
   
       const data = await response.json();
+      console.log(data); // Add this line
       const devotionalContent = data.devotionalContent;
   
       document.getElementById("devotionalContent").innerText = devotionalContent;
